@@ -11,7 +11,7 @@ const SignUp = () =>{
         if(auth){
             navigate("/")
         }
-    })
+    },[])
 
     const SignUp = async () =>{
         console.log(name,email,password);
