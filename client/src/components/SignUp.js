@@ -32,7 +32,7 @@ const SignUp = () =>{
     return (
         <div className="signUp-page">
             <h1>Sign-Up</h1>
-            <div className="sign-form">
+            <div className="input-form">
                 <input 
                     type = "text" 
                     placeholder="Enter Your Name"

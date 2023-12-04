@@ -19,6 +19,7 @@ const Navbar = () => {
                         <Link onClick={logout} to="/signup">Logout</Link> :  <Link to="/signup">SignUp</Link>
                 }
             </ul>
+            <ul><Link to="/login">Login</Link></ul>
         </div>
     )
 }
