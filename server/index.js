@@ -38,6 +38,15 @@ app.post("/add-product", async(req,res)=>{
     res.send(result)
 })
 
+app.get("/products",async (req,res)=>{
+    let products = await Product.find();
+    if(products.length > 0){
+        res.send(products)
+    }else{
+        res.send({result : "No Product Found"})
+    }
+})
+
 // const connectDB = async () => {
 //     const mongo = mongoose.connect("mongodb://127.0.0.1:27017/e-com");
 //     console.log(mongo);
