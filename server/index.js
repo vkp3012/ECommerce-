@@ -3,6 +3,8 @@ const cors = require("cors")
 // const mongoose = require("mongoose")
 require("./db/configs.js")
 const User = require("./db/User.js")
+const Product = require("./db/Product.js");
+
 const app = express()
 const port = 5000
 app.use(express.json());
@@ -27,8 +29,13 @@ app.post("/login",async (req,res)=>{
         }
     }else{
         res.send({result : "please enter your password"})
-    }
-    
+    }    
+})
+
+app.post("/add-product", async(req,res)=>{
+    let product = new Product(req.body)
+    let result = await product.save();
+    res.send(result)
 })
 
 // const connectDB = async () => {
