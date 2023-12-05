@@ -61,6 +61,16 @@ app.get("/product/:id",async (req,res)=>{
     }
 })
 
+app.put("/product/:id",async (req,res)=>{
+    let result = await Product.updateOne(
+        { _id : req.params.id},
+        {
+            $set : req.body
+        }
+    )
+    res.send(result)
+})
+
 // const connectDB = async () => {
 //     const mongo = mongoose.connect("mongodb://127.0.0.1:27017/e-com");
 //     console.log(mongo);
