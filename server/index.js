@@ -52,6 +52,15 @@ app.delete("/product/:id",async(req,res)=>{
     res.send(result)
 })
 
+app.get("/product/:id",async (req,res)=>{
+    let result = await Product.findOne({_id:req.params.id});
+    if(result){
+        res.send(result)
+    }else{
+        res.send({result:"No Product Found"})
+    }
+})
+
 // const connectDB = async () => {
 //     const mongo = mongoose.connect("mongodb://127.0.0.1:27017/e-com");
 //     console.log(mongo);
