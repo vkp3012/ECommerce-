@@ -55,7 +55,6 @@ a{
   width: 100%;
 }
 
-
 /* signUp page */
 .signUp-page{
   margin-left: 30%;
@@ -96,4 +95,9 @@ a{
   color: #1232e8;
 }
 
+/* add product */
+.add-product{
+  margin-left: 30%;
+  margin-top: 20px;
+}
 
