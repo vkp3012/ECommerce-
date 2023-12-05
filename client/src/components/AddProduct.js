@@ -6,8 +6,20 @@ const AddProduct = () => {
     const [category,setCategory] = useState("")
     const [company,setCompany] = useState("")
 
-    const handleAddProduct = () => {
+    const handleAddProduct = async () => {
         console.log(name,price,category,company)
+        const userId = JSON.parse(localStorage.getItem("user"))._id;
+        // console.log(userId._id);
+        let result = await fetch("http://localhost:5000/add-product",{
+            method : "post",
+            body:JSON.stringify({name,price,category,company,userId}),
+            headers : {
+                "content-type":"application/json"
+            }
+        })
+
+        result = await result.json();
+        console.log(result)
     }
 
     return (
