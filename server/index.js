@@ -71,6 +71,17 @@ app.put("/product/:id",async (req,res)=>{
     res.send(result)
 })
 
+app.get("/search/:key",async (req,res)=>{
+    let result = await Product.find({
+        "$or" : [
+            {name : {$regex : req.params.key}},
+            {company : {$regex : req.params.key}},
+            {category : {$regex : req.params.key}}
+        ]
+    })
+    res.send(result)
+})
+
 // const connectDB = async () => {
 //     const mongo = mongoose.connect("mongodb://127.0.0.1:27017/e-com");
 //     console.log(mongo);
